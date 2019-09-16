@@ -29,14 +29,19 @@ function addItemAfterClick(){
 
 function done(){
 	var target=event.target;
-	target.classList.toggle("done");
+	if (target.nodeName === "LI"){
+		target.classList.toggle("done");
+	}
 }
 
 function addDeleteButton(li){
 	var deleteB = document.createElement("button");
 	deleteB.innerHTML = "Delete";
 	deleteB.onclick = function(){
-		alert("HIIII");
+		var r = confirm("Are you sure delete the item?");
+		if (r){
+			li.parentNode.removeChild(li);
+		}
 	}
 	li.appendChild(deleteB);
 }

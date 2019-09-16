@@ -6,3 +6,8 @@ li {
 .done {
 	text-decoration: line-through;
 }
+
+ul {
+    display: flex;
+    flex-direction: column-reverse;
+}
